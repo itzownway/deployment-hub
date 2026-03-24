@@ -8,8 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Node App
+      - name: Trigger Repo-2 Deployment
         run: |
-          curl -X POST https://api.github.com/repos/itzownway/simple-node-azure/dispatches \
+          curl -i -X POST https://api.github.com/repos/itzownway/simple-node-azure/dispatches \
+          -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{ secrets.REPO2_PAT }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
           -d '{"event_type": "trigger-deploy"}'
