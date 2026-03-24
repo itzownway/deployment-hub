@@ -1,0 +1,8 @@
+{
+  "services": [
+    {
+      "name": "node-app",
+      "repo": "simple-node-azure"
+    }
+  ]
+}
